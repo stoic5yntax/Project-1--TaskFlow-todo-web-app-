@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow- Your thoughts, organized.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/index.html" class="logo">TaskFlow</a>
+      <div class="nav--container">
+        <a href="#"><i class="bi bi-bell"></i></a>
+        <a href="#"><i class="bi bi-person-circle"></i></a>
+      </div>
+    </nav>
+
+    <div class="app-wrapper">
+      <div class="task-create--container">
+        <form id="creation-form">
+          <div class="input--container">
+            <input
+              id="input-el"
+              placeholder="Enter your task here.."
+              autocomplete="off"
+              autofocus="on"
+            />
+            <button>+</i></button>
+          </div>
+          <div class="tag--container">
+            <select id="tag-select">
+              <option value="Home">Home</option>
+              <option value="Personal">Personal</option>
+              <option value="Work">Work</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="task-list--container" id="task-list--container">
+        <!-- Dynamically added -->
+      </div>
+    </div>
+  </body>
+</html>
