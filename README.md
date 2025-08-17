@@ -1,20 +1,50 @@
-# 📝 Todo App
+# TaskFlow – Your thoughts, organized ✅
 
-A minimal, dark-themed Todo application built with vanilla JavaScript.
-It’s lightweight, fast, and stores your tasks locally — no backend required.
+TaskFlow is a simple task manager built with **HTML, CSS, and JavaScript**.  
+It helps you create, organize, and manage daily tasks with tags and timestamps.  
+Tasks are stored in the browser’s **localStorage** so they remain after refresh.
 
-✨ Features
+---
 
-🌙 Dark theme UI with custom scrollbars and gradient highlights
+## ✨ Features
+- ➕ **Add tasks** with title, tag, and timestamp  
+- 📝 **Edit tasks** easily  
+- ❌ **Delete tasks** when no longer needed  
+- ✅ **Mark tasks as completed** (moves to bottom with a border)  
+- 🏷️ **Tag support** – Home, Personal, Work  
+- 💾 **LocalStorage persistence** – tasks are saved in your browser  
 
-🗂 Create tasks with category tags
+---
 
-✏️ Edit tasks anytime
+## 🚀 Getting Started
 
-🗑 Delete tasks with a click
+1. Clone or download the project  
+2. Open `index.html` in your browser  
+3. Start adding tasks 🎉  
 
-💾 Persistent storage using Local Storage (tasks stay saved even after refresh)
+---
 
-⚡ Vanilla JavaScript only — no frameworks
+## 🛠️ Tech Stack
+- **HTML5** – structure  
+- **CSS3** – styling (flexbox, custom variables, dark theme)  
+- **JavaScript (ES6)** – logic and DOM manipulation  
+- **Bootstrap Icons** – icons for edit/delete/complete buttons  
 
-<img width="1919" height="883" alt="Screenshot 2025-08-16 191222" src="https://github.com/user-attachments/assets/96ffe7d2-b695-4feb-a3c2-0013b01d33c6" />
+---
+
+## 📸 Preview
+<img width="1902" height="876" alt="image" src="https://github.com/user-attachments/assets/972879a5-9697-4838-a6cb-f6207864ee8f" />
+
+---
+
+## 📂 Project Structu
+├── index.html # Main page
+├── style.css # Styles (dark theme + tags)
+├── script.js # Core logic (task handling, localStorage)
+
+---
+
+## 🧪 Future Improvements
+- Add search & filter by tag  
+- Add drag & drop task ordering  
+- Add due dates & reminders  
