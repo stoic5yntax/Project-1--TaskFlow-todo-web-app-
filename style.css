@@ -3,11 +3,18 @@
   --color-primary: #1e1e1e;
   --color-secondary: #428fe7;
   --color-container: #2a2a2a;
-  --color-tag: #f5a623;
+
+  --color-tag-home: #b623f5;
+  --color-tag-work: #f52358;
+  --color-tag-personal: #2362f5;
+
   --color-border: #a0a0a0;
 
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
+
+  --radius-small: 4px;
+  --radius-medium: 6px;
 }
 
 *,
@@ -24,15 +31,15 @@ html {
 
 body {
   background: var(--color-primary);
-  overflow: hidden;
   position: relative;
 }
 
+/* Input + button resets */
 input,
 button,
 select {
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   color: var(--text-primary);
   outline: none;
 }
@@ -49,19 +56,16 @@ button {
   background: none;
   cursor: pointer;
   padding: 0;
+  transition: transform 0.3s ease-in;
 }
 button:hover {
   transform: scale(1.2);
-  transition: all ease-in 0.3s;
 }
 
 select {
   padding: 0.85rem;
-}
-
-select:focus {
-  border: none;
-  outline: none;
+  appearance: none;
+  background: none;
 }
 
 a {
@@ -75,6 +79,18 @@ i {
   font-size: 1.25rem;
 }
 
+/* Accessible to screen reader yet visually hidden */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* prevent line breaks */
+  border: 0;
+}
 /* NAVBAR */
 nav {
   align-items: center;
@@ -97,12 +113,7 @@ nav {
   font-weight: bold;
 }
 
-.nav--container {
-  display: flex;
-  gap: 2rem;
-}
-
-/* APP STYLES */
+/* APP WRAPPER */
 .app-wrapper {
   background: var(--color-primary);
   color: var(--text-primary);
@@ -128,24 +139,27 @@ nav {
 
 .task-create--container {
   max-width: 40%;
+  overflow: hidden;
 }
 
-/* Task list */
+/* TASK LIST */
 .task-list--container {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .task-list--container::-webkit-scrollbar {
   width: 2px;
 }
+.task-list--container::-webkit-scrollbar-track,
+.task-list--container::-webkit-scrollbar-thumb {
+  border-radius: var(--radius-small);
+}
 .task-list--container::-webkit-scrollbar-track {
   background: var(--color-container);
-  border-radius: 4px;
   margin: 1rem 0;
 }
 .task-list--container::-webkit-scrollbar-thumb {
   background-color: var(--color-secondary);
-  border-radius: 4px;
 }
 
 .task-list--item {
@@ -156,6 +170,17 @@ nav {
   justify-content: space-between;
   padding: 1.5rem;
   width: 100%;
+  border-radius: var(--radius-small);
+}
+
+/* Completed task */
+.task-list--item.completed {
+  border: 2px solid green;
+  opacity: 0.9;
+}
+.task-list--item.completed span {
+  text-decoration: line-through;
+  color: var(--text-secondary);
 }
 
 .item-text,
@@ -178,12 +203,21 @@ nav {
   font-size: 1.3rem;
 }
 
+/* TAGS */
 .tag {
-  background: var(--color-tag);
-  border-radius: 6px;
+  border-radius: var(--radius-medium);
   font-size: 0.55rem;
   margin-top: 0.75rem;
-  padding: 0.45rem 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+.tag-home {
+  background: var(--color-tag-home);
+}
+.tag-personal {
+  background: var(--color-tag-personal);
+}
+.tag-work {
+  background: var(--color-tag-work);
 }
 
 .item-text span {
@@ -195,10 +229,6 @@ nav {
 }
 
 /* Task creation */
-.task-create--container {
-  overflow: hidden;
-}
-
 .task-create--container form,
 .input--container {
   display: flex;
@@ -219,7 +249,7 @@ nav {
 
 .tag--container {
   background: var(--color-container);
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   position: relative;
   display: inline-block;
 }
@@ -235,15 +265,11 @@ nav {
 
 .task-create--container select {
   color: var(--text-secondary);
-  appearance: none;
-  background: none;
-  padding: none;
   width: 100%;
 }
 
 .task-create--container option {
   background: var(--color-container);
   border: none;
-  border-radius: 4px;
-  outline: none;
+  border-radius: var(--radius-small);
 }
